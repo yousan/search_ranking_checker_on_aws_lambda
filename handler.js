@@ -9,7 +9,7 @@ const puppeteer = require('puppeteer')
  * @param {Object} event Lambdaイベントデータ
  * @param {Object} context Contextオブジェクト
  * @param {function} callback コールバックオプション
- */  
+ */
 exports.handler = async (event, context, callback) => {
   let slsChrome = null
   let browser = null
@@ -19,8 +19,8 @@ exports.handler = async (event, context, callback) => {
     // 前処理
     // serverless-chromeを起動し、PuppeteerからWebSocketで接続する
     slsChrome = await launchChrome()
-    browser = await puppeteer.connect({ 
-      browserWSEndpoint: (await CDP.Version()).webSocketDebuggerUrl 
+    browser = await puppeteer.connect({
+      browserWSEndpoint: (await CDP.Version()).webSocketDebuggerUrl
     })
     const context = browser.defaultBrowserContext()
 
@@ -84,7 +84,7 @@ exports.handler = async (event, context, callback) => {
       await browser.disconnect()
     }
 
-    if (slsChrome) { 
+    if (slsChrome) {
       await slsChrome.kill()
     }
   }

@@ -1,12 +1,17 @@
 {
   "name": "search_ranking_checker_on_aws_lambda",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "handler.js",
   "author": "chimame",
   "license": "MIT",
   "dependencies": {
-    "@serverless-chrome/lambda": "^1.0.0-55",
+    "@serverless-chrome/lambda": "^1.0.0-38",
+    "chrome-launcher": "^0.10.5",
     "chrome-remote-interface": "^0.26.1",
     "puppeteer": "^1.10.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.35.1",
+    "serverless-offline": "^3.31.3"
   }
 }
