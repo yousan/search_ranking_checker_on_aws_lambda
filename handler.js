@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer')
  * @param {Object} context Contextオブジェクト
  * @param {function} callback コールバックオプション
  */
-exports.handler = async (event, context, callback) => {
+module.exports.hello = async (event, context, callback) => {
   let slsChrome = null
   let browser = null
   let page = null
